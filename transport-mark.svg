@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-labelledby="title">
+  <title id="title">TransPort AI busz és villamos embléma</title>
+  <rect x="4" y="4" width="88" height="88" rx="22" fill="#135fe8"/>
+  <path d="M20 29c0-5 4-9 9-9h38c5 0 9 4 9 9v32c0 4-3 7-7 7h-3v5h-7v-5H37v5h-7v-5h-3c-4 0-7-3-7-7V29Z" fill="#fffdf5"/>
+  <path d="M28 29h40v19H28z" fill="#ffd83d"/>
+  <path d="M33 29v19M48 29v19M63 29v19" stroke="#135fe8" stroke-width="4"/>
+  <path d="M28 55h40" stroke="#135fe8" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="34" cy="61" r="4" fill="#1fae5b"/><circle cx="62" cy="61" r="4" fill="#1fae5b"/>
+  <path d="M41 13v7M55 13v7" stroke="#9bf143" stroke-width="4" stroke-linecap="round"/>
+</svg>
