@@ -28,9 +28,9 @@
           <input id="username" name="username" type="text" placeholder="Admin felhasználónév" autocomplete="username" required>
           <label for="password">Jelszó</label>
           <input id="password" name="password" type="password" placeholder="Jelszó" autocomplete="current-password" required>
-          <button class="button login-button" type="submit">Bejelentkezés <span>→</span></button>
+          <button class="button login-button" id="loginButton" type="submit">Bejelentkezés <span>→</span></button>
         </form>
-        <p class="login-notice" id="loginNotice" role="status">A bejelentkezés backendje még nincs csatlakoztatva. Ez az oldal jelenleg csak kezelőfelületi előnézet.</p>
+        <p class="login-notice" id="loginNotice" role="status">Helyi teszt: a backendnek futnia kell a laptopodon a 127.0.0.1:8000 címen.</p>
         <a class="back-link" href="../index.html">Vissza a BartosMulti oldalára</a>
       </div>
       <div class="login-side">
@@ -41,17 +41,44 @@
       </div>
     </section>
 
+    <section class="admin-dashboard" id="dashboardView" hidden>
+      <div class="dashboard-heading">
+        <div>
+          <span class="eyebrow">BARTOSMULTI / ADMIN</span>
+          <h1>Vezérlőpult</h1>
+          <p class="login-description">Sikeresen bejelentkeztél a helyi backendbe.</p>
+        </div>
+        <button class="button logout-button" id="logoutButton" type="button">Kijelentkezés</button>
+      </div>
+      <div class="dashboard-card">
+        <h2>Adminfiók</h2>
+        <p><strong>Felhasználónév:</strong> <span id="adminUsername">–</span></p>
+        <p><strong>Azonosító:</strong> <span id="adminId">–</span></p>
+        <p><strong>Jogosultság:</strong> <span id="adminRole">–</span></p>
+        <p><strong>Állapot:</strong> <span id="adminStatus">–</span></p>
+      </div>
+      <div class="dashboard-card audit-card">
+        <div class="audit-heading">
+          <div><h2>Admin tevékenységnapló</h2><p class="dashboard-muted">A backend által rögzített legutóbbi műveletek.</p></div>
+          <button class="button refresh-button" id="refreshAuditButton" type="button">Frissítés</button>
+        </div>
+        <p id="auditNotice" class="dashboard-muted" role="status">Napló betöltése…</p>
+        <div class="audit-list" id="auditList"></div>
+      </div>
+      <p class="dashboard-warning">Ez jelenleg helyi fejlesztői kapcsolat. A ticketkezelés, chatnapló és botvezérlés még nincs bekötve.</p>
+    </section>
+
     <section class="admin-preview" aria-label="Tervezett adminfunkciók">
-      <div class="preview-heading"><div><span class="eyebrow">TERVEZETT MODULOK</span><h2>Admin központ</h2></div><span class="preview-tag">ELŐNÉZET · NEM ÉLES</span></div>
+      <div class="preview-heading"><div><span class="eyebrow">TERVEZETT MODULOK</span><h2>Admin központ</h2></div><span class="preview-tag">FEJLESZTÉS ALATT</span></div>
       <div class="preview-grid">
-        <article class="preview-card"><span>👥</span><h3>Adminfiókok</h3><p>Adminok hozzáadása, törlése és jogosultságainak kezelése.</p><small>Backend szükséges</small></article>
+        <article class="preview-card"><span>👥</span><h3>Adminfiókok</h3><p>Adminok hozzáadása, törlése és jogosultságainak kezelése.</p><small>Backend részben kész</small></article>
         <article class="preview-card"><span>💬</span><h3>Chatnapló</h3><p>A Discordon naplózott üzenetek keresése és megtekintése.</p><small>Botintegráció szükséges</small></article>
         <article class="preview-card"><span>🎫</span><h3>Ticketkezelés</h3><p>Nyitott ügyek megtekintése és válasz küldése a weboldalról.</p><small>Botintegráció szükséges</small></article>
         <article class="preview-card"><span>🤖</span><h3>Botparancsok</h3><p>Parancsok engedélyezése és letiltása központilag.</p><small>Backend szükséges</small></article>
-        <article class="preview-card"><span>📋</span><h3>Adminnapló</h3><p>Ki, mikor és milyen adminműveletet végzett.</p><small>Adatbázis szükséges</small></article>
-        <article class="preview-card"><span>🔐</span><h3>Biztonság</h3><p>Védett munkamenetek, szerepkörök és hozzáférés-ellenőrzés.</p><small>Backend szükséges</small></article>
+        <article class="preview-card"><span>📋</span><h3>Adminnapló</h3><p>Ki, mikor és milyen adminműveletet végzett.</p><small>Alapnapló működik</small></article>
+        <article class="preview-card"><span>🔐</span><h3>Biztonság</h3><p>Védett munkamenetek, szerepkörök és hozzáférés-ellenőrzés.</p><small>Fejlesztés alatt</small></article>
       </div>
-      <p class="preview-footnote">A funkciók még nem aktívak. A valódi adminisztráció csak szerveroldali hitelesítéssel és jogosultság-ellenőrzéssel kapcsolható be.</p>
+      <p class="preview-footnote">A kezelőfelület fokozatosan készül. Éles használat előtt a backendnek folyamatosan elérhető, HTTPS-sel védett tárhelyre és további biztonsági tesztekre lesz szüksége.</p>
     </section>
     <footer class="admin-footer">© 2026 BartosMulti · Adminisztrációs felület</footer>
   </main>
