@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#11121c">
+  <meta name="description" content="BartosMulti adminisztrációs felület.">
+  <title>Admin – BartosMulti</title>
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body class="admin-body">
+  <main class="admin-shell">
+    <header class="admin-topbar">
+      <a class="logo" href="../index.html"><span class="logo-mark">BM</span>Bartos<span class="accent">Multi</span></a>
+      <div class="admin-topbar-right"><span class="status-dot"></span><span>Admin központ</span><a href="../index.html">← Vissza a weboldalra</a></div>
+    </header>
+
+    <section class="login-wrap" id="loginView">
+      <div class="login-card">
+        <div class="login-icon">✦</div>
+        <span class="eyebrow">BARTOSMULTI / STAFF</span>
+        <h1>Adminisztráció</h1>
+        <p class="login-description">Jelentkezz be a BartosMulti kezelőfelületére.</p>
+        <form id="loginForm">
+          <label for="username">Felhasználónév</label>
+          <input id="username" name="username" type="text" placeholder="Admin felhasználónév" autocomplete="username" required>
+          <label for="password">Jelszó</label>
+          <input id="password" name="password" type="password" placeholder="Jelszó" autocomplete="current-password" required>
+          <button class="button login-button" type="submit">Bejelentkezés <span>→</span></button>
+        </form>
+        <p class="login-notice" id="loginNotice" role="status">A bejelentkezés backendje még nincs csatlakoztatva. Ez az oldal jelenleg csak kezelőfelületi előnézet.</p>
+        <a class="back-link" href="../index.html">Vissza a BartosMulti oldalára</a>
+      </div>
+      <div class="login-side">
+        <span class="eyebrow">KÖZÖSSÉGKEZELÉS</span>
+        <h2>Minden fontos<br><span class="gradient-text">egy helyen.</span></h2>
+        <p>Adminfiókok, ticketek, naplóbejegyzések és botbeállítások – egy közös felületen.</p>
+        <div class="side-pills"><span>🛡️ Jogosultságok</span><span>🎫 Ticketkezelés</span><span>🤖 Botvezérlés</span></div>
+      </div>
+    </section>
+
+    <section class="admin-preview" aria-label="Tervezett adminfunkciók">
+      <div class="preview-heading"><div><span class="eyebrow">TERVEZETT MODULOK</span><h2>Admin központ</h2></div><span class="preview-tag">ELŐNÉZET · NEM ÉLES</span></div>
+      <div class="preview-grid">
+        <article class="preview-card"><span>👥</span><h3>Adminfiókok</h3><p>Adminok hozzáadása, törlése és jogosultságainak kezelése.</p><small>Backend szükséges</small></article>
+        <article class="preview-card"><span>💬</span><h3>Chatnapló</h3><p>A Discordon naplózott üzenetek keresése és megtekintése.</p><small>Botintegráció szükséges</small></article>
+        <article class="preview-card"><span>🎫</span><h3>Ticketkezelés</h3><p>Nyitott ügyek megtekintése és válasz küldése a weboldalról.</p><small>Botintegráció szükséges</small></article>
+        <article class="preview-card"><span>🤖</span><h3>Botparancsok</h3><p>Parancsok engedélyezése és letiltása központilag.</p><small>Backend szükséges</small></article>
+        <article class="preview-card"><span>📋</span><h3>Adminnapló</h3><p>Ki, mikor és milyen adminműveletet végzett.</p><small>Adatbázis szükséges</small></article>
+        <article class="preview-card"><span>🔐</span><h3>Biztonság</h3><p>Védett munkamenetek, szerepkörök és hozzáférés-ellenőrzés.</p><small>Backend szükséges</small></article>
+      </div>
+      <p class="preview-footnote">A funkciók még nem aktívak. A valódi adminisztráció csak szerveroldali hitelesítéssel és jogosultság-ellenőrzéssel kapcsolható be.</p>
+    </section>
+    <footer class="admin-footer">© 2026 BartosMulti · Adminisztrációs felület</footer>
+  </main>
+  <script src="admin.js"></script>
+</body>
+</html>
