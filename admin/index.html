@@ -50,13 +50,37 @@
         </div>
         <button class="button logout-button" id="logoutButton" type="button">Kijelentkezés</button>
       </div>
-      <div class="dashboard-card">
-        <h2>Adminfiók</h2>
+
+      <div class="dashboard-card account-card">
+        <h2>Bejelentkezett admin</h2>
         <p><strong>Felhasználónév:</strong> <span id="adminUsername">–</span></p>
         <p><strong>Azonosító:</strong> <span id="adminId">–</span></p>
         <p><strong>Jogosultság:</strong> <span id="adminRole">–</span></p>
         <p><strong>Állapot:</strong> <span id="adminStatus">–</span></p>
       </div>
+
+      <section class="dashboard-card management-card" id="adminManagement">
+        <div class="section-heading">
+          <div><span class="eyebrow">HOZZÁFÉRÉSEK</span><h2>Adminfiókok kezelése</h2><p class="dashboard-muted">Adminfiókok létrehozása, jogosultságainak módosítása és kezelése.</p></div>
+          <button class="button refresh-button" id="refreshAdminsButton" type="button">Lista frissítése</button>
+        </div>
+
+        <div class="create-admin-panel">
+          <h3>Új adminfiók</h3>
+          <form id="createAdminForm" class="create-admin-form">
+            <div class="field-group"><label for="newAdminUsername">Felhasználónév</label><input id="newAdminUsername" name="username" type="text" minlength="3" maxlength="40" pattern="[a-zA-Z0-9_.-]+" autocomplete="off" placeholder="pl. moderator01" required></div>
+            <div class="field-group"><label for="newAdminPassword">Kezdeti jelszó</label><input id="newAdminPassword" name="password" type="password" minlength="12" maxlength="128" autocomplete="new-password" placeholder="Legalább 12 karakter" required></div>
+            <div class="field-group"><label for="newAdminRole">Jogosultság</label><select id="newAdminRole" name="role"><option value="moderator">Moderátor</option><option value="admin">Admin</option></select></div>
+            <button class="button create-admin-button" id="createAdminButton" type="submit">Admin létrehozása</button>
+          </form>
+          <p class="form-hint">A jelszó legalább 12 karakter legyen. A tulajdonosi (owner) jogosultságot ez az űrlap nem osztja ki.</p>
+        </div>
+
+        <div class="admin-list-heading"><h3>Regisztrált adminok</h3><span id="adminCount" class="count-label">–</span></div>
+        <p id="adminListNotice" class="dashboard-muted" role="status">Adminlista betöltése…</p>
+        <div id="adminList" class="admin-list"></div>
+      </section>
+
       <div class="dashboard-card audit-card">
         <div class="audit-heading">
           <div><h2>Admin tevékenységnapló</h2><p class="dashboard-muted">A backend által rögzített legutóbbi műveletek.</p></div>
@@ -65,13 +89,13 @@
         <p id="auditNotice" class="dashboard-muted" role="status">Napló betöltése…</p>
         <div class="audit-list" id="auditList"></div>
       </div>
-      <p class="dashboard-warning">Ez jelenleg helyi fejlesztői kapcsolat. A ticketkezelés, chatnapló és botvezérlés még nincs bekötve.</p>
+      <p class="dashboard-warning">Ez jelenleg helyi fejlesztői kapcsolat. A ticketkezelés, chatnapló és botvezérlés még nincs bekötve. A weboldal nyilvános GitHub Pages-oldal, a backend viszont csak a saját laptopodon fut.</p>
     </section>
 
     <section class="admin-preview" aria-label="Tervezett adminfunkciók">
       <div class="preview-heading"><div><span class="eyebrow">TERVEZETT MODULOK</span><h2>Admin központ</h2></div><span class="preview-tag">FEJLESZTÉS ALATT</span></div>
       <div class="preview-grid">
-        <article class="preview-card"><span>👥</span><h3>Adminfiókok</h3><p>Adminok hozzáadása, törlése és jogosultságainak kezelése.</p><small>Backend részben kész</small></article>
+        <article class="preview-card"><span>👥</span><h3>Adminfiókok</h3><p>Adminok hozzáadása, törlése és jogosultságainak kezelése.</p><small>Első verzió elkészült</small></article>
         <article class="preview-card"><span>💬</span><h3>Chatnapló</h3><p>A Discordon naplózott üzenetek keresése és megtekintése.</p><small>Botintegráció szükséges</small></article>
         <article class="preview-card"><span>🎫</span><h3>Ticketkezelés</h3><p>Nyitott ügyek megtekintése és válasz küldése a weboldalról.</p><small>Botintegráció szükséges</small></article>
         <article class="preview-card"><span>🤖</span><h3>Botparancsok</h3><p>Parancsok engedélyezése és letiltása központilag.</p><small>Backend szükséges</small></article>
