@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: bartosmulti-admin-api
+    runtime: python
+    plan: free
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /api/health
+    envVars:
+      - key: DATABASE_URL
+        sync: false
+      - key: ALLOWED_ORIGINS
+        value: https://martin88nagy-ui.github.io
+      - key: SESSION_HOURS
+        value: "12"
