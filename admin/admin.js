@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Helyi fejlesztői backend. Éles használat előtt HTTPS-es, hostolt API-cím szükséges.
-  const API_BASE = "http://127.0.0.1:8000";
+  // Éles, HTTPS-es Render backend.
+  const API_BASE = "https://bartosmulti-admin-api.onrender.com";
 
   const $ = (id) => document.getElementById(id);
   const loginView = $("loginView");
@@ -89,7 +89,7 @@ document.addEventListener("DOMContentLoaded", () => {
     event.preventDefault();
     loginButton.disabled = true;
     loginButton.textContent = "Bejelentkezés…";
-    showNotice("Kapcsolódás a helyi backendhez…");
+    showNotice("Kapcsolódás a BartosMulti szerveréhez…");
 
     const username = $("username").value.trim();
     const password = $("password").value;
@@ -106,7 +106,7 @@ document.addEventListener("DOMContentLoaded", () => {
       accessToken = null;
       showNotice(
         error instanceof TypeError
-          ? "Nem érhető el a helyi backend. Ellenőrizd, hogy fut-e a szerver a CMD-ablakban."
+          ? "Nem érhető el a BartosMulti szervere. Próbáld meg néhány másodperc múlva újra."
           : `Bejelentkezés sikertelen: ${error.message}`,
         true
       );
