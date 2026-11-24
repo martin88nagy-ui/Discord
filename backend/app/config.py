@@ -1,5 +1,12 @@
 import os
 from dataclasses import dataclass
+from pathlib import Path
+
+try:
+    from dotenv import load_dotenv
+    load_dotenv(Path(__file__).resolve().parents[1] / ".env")
+except ImportError:
+    pass
 
 @dataclass(frozen=True)
 class Settings:
